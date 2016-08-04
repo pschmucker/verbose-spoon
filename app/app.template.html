@@ -1,0 +1,26 @@
+<form>
+	first name
+	<input
+		type="text"
+		#firstname
+		[value]="user.firstname"
+		(input)="user.firstname = firstname.value"
+		[validatedClass]="[user, 'firstname']" />
+		<br/>
+	last name
+	<input
+		type="text"
+		#lastname
+		[value]="user.lastname"
+		(input)="user.lastname = lastname.value"
+		[validatedClass]="[user, 'lastname']" />
+		<br/>
+	email
+	<input
+		type="text"
+		#email
+		[value]="user.email"
+		(input)="user.email = email.value"
+		[validatedClass]="[user, 'email']" />
+		<br/>
+</form>

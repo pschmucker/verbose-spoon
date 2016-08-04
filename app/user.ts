@@ -7,7 +7,7 @@ export class User {
 	@MaxLength(20, {
 		message: 'Firstname is too long (20 characters max)'
 	})
-	firstname: string;
+	firstname: string = '';
 
 	@NotEmpty({
 		message: 'Lastname is required'
@@ -15,9 +15,9 @@ export class User {
 	@MaxLength(20, {
 		message: 'Lastname is too long (20 characters max)'
 	})
-	lastname: string;
+	lastname: string = '';
 
 	@IsEmail()
-	email: string;
+	email: string = '';
 }
 

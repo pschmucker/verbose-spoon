@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
-import './validation-sample';
-import './user';
+import { User } from './user';
+import { ValidatedClass } from './validated-class.directive'
+
+const template = require('./app.template.html');
 
 @Component({
 	selector: 'my-app',
-	template: '<h1>My First Angular 2 App with Webpack</h1>'
+	directives: [ValidatedClass],
+	template: template
 })
-export class AppComponent { }
-
+export class AppComponent {
+	user: User;
+	constructor() {
+		this.user = new User();
+	}
+}
