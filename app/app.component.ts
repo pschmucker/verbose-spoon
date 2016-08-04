@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import './validation-sample';
+import './user';
 
 @Component({
 	selector: 'my-app',

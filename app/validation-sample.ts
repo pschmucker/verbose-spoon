@@ -1,5 +1,6 @@
-import { Validator } from "validator.ts/Validator";
-import { Contains, IsInt, IsLength, IsEmail, IsFQDN, IsDate } from "validator.ts/decorator/Validation";
+import { Validator } from 'validator.ts/Validator';
+import { Contains, IsInt, IsLength, IsEmail, IsFQDN, IsDate } from 'validator.ts/decorator/Validation';
+import { User } from './user';
 
 export class Post {
 	@IsLength(10, 20)
@@ -21,16 +22,34 @@ export class Post {
 	createDate: Date;
 }
 
-let post = new Post();
-post.title = 'Hello'; // should not pass 
-post.text = 'this is a great post about hell world'; // should not pass 
-post.rating = 11; // should not pass 
-post.email = 'google.com'; // should not pass 
-post.site = 'googlecom'; // should not pass 
+// let post = new Post();
+// post.title = 'Hello'; // should not pass 
+// post.text = 'this is a great post about hell world'; // should not pass 
+// post.rating = 11; // should not pass 
+// post.email = 'google.com'; // should not pass 
+// post.site = 'googlecom'; // should not pass 
+// 
+// let validator = new Validator();
+// let errors = validator.validate(post, {
+// 	skipMissingProperties: true
+// }); // returns you array of errors 
+// 
+// console.log(errors);
+
+
+
+
+let user = new User();
+user.firstname = 'Hello zefhiuefhiuzehfiuuzihefiuzfz'; // should not pass 
+user.lastname = 'this is a great post about hell world'; // should not pass 
+user.email = 'coucou'; // should not pass 
+
 
 let validator = new Validator();
-let errors = validator.validate(post, {
+let errors = validator.validate(user, {
 	skipMissingProperties: true
 }); // returns you array of errors 
 
 console.log(errors);
+
+
