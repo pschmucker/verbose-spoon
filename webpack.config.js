@@ -4,6 +4,15 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
 module.exports = {
+  devtool: 'inline-source-map',
+  
+  output: {
+    path: helpers.root('dist'),
+    publicPath: 'http://localhost:8080/',
+    filename: '[name].js',
+    chunkFilename: '[id].chunk.js'
+  },
+  
   entry: {
     'polyfills': './app/polyfills.ts',
     'vendor': './app/vendor.ts',
