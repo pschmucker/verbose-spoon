@@ -31,7 +31,9 @@ post.email = 'google.com'; // should not pass
 post.site = 'googlecom'; // should not pass 
  
 let validator = new Validator();
-let errors = validator.validate(post); // returns you array of errors 
+let errors = validator.validate(post, {
+	skipMissingProperties: true
+}); // returns you array of errors 
 
 console.log(errors);
 
