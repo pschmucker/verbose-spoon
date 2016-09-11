@@ -1,15 +1,16 @@
-import { Validator } from 'validator.ts/Validator';
-import { Contains, IsInt, IsLength, IsEmail, IsFQDN, IsDate } from 'validator.ts/decorator/Validation';
+import { Validator, Contains, IsInt, Length, Min, Max, IsEmail, IsFQDN, IsDate } from 'class-validator';
 import { User } from './user';
 
 export class Post {
-	@IsLength(10, 20)
+	@Length(10, 20)
 	title: string;
 
 	@Contains('hello')
 	text: string;
 
-	@IsInt({ min: 0, max: 10 })
+	@IsInt()
+	@Min(0)
+	@Max(10)
 	rating: number;
 
 	@IsEmail()
@@ -36,20 +37,14 @@ export class Post {
 // 
 // console.log(errors);
 
-
-
-
 let user = new User();
 user.firstname = 'Hello zefhiuefhiuzehfiuuzihefiuzfz'; // should not pass 
 user.lastname = 'this is a great post about hell world'; // should not pass 
 user.email = 'coucou'; // should not pass 
 
-
 let validator = new Validator();
-let errors = validator.validate(user, {
+validator.validate(user, {
 	skipMissingProperties: true
-}); // returns you array of errors 
-
-console.log(errors);
-
-
+}).then(errors => {// returns you array of errors 
+	console.error(errors);
+});

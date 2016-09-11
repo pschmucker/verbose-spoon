@@ -1,7 +1,7 @@
-import { NotEmpty, MaxLength, IsEmail } from "validator.ts/decorator/Validation";
+import { IsNotEmpty, MaxLength, IsEmail } from 'class-validator';
 
 export class User {
-	@NotEmpty({
+	@IsNotEmpty({
 		message: 'Firstname is required'
 	})
 	@MaxLength(20, {
@@ -9,7 +9,7 @@ export class User {
 	})
 	firstname: string = '';
 
-	@NotEmpty({
+	@IsNotEmpty({
 		message: 'Lastname is required'
 	})
 	@MaxLength(20, {
@@ -20,4 +20,3 @@ export class User {
 	@IsEmail()
 	email: string = '';
 }
-

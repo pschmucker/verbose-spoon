@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from './user';
-import { ValidatedClass } from './validated-class.directive'
+import { ValidatedClass } from './validated-class.directive';
 
 const template = require('./app.template.html');
 
