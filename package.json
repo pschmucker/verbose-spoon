@@ -4,7 +4,7 @@
   "description": "Workshop Angular 2 and other... :)",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 8910",
+    "start": "webpack-dev-server --inline --progress --port 3000",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "postinstall": "typings install"

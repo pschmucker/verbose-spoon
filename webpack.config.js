@@ -8,7 +8,7 @@ module.exports = {
   
   output: {
     path: helpers.root('dist'),
-    publicPath: 'http://localhost:8910/',
+    publicPath: 'http://localhost:3000/',
     filename: '[name].js',
     chunkFilename: '[id].chunk.js'
   },
