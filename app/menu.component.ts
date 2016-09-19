@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-const template = require('./app.template.html');
+const template = require('./menu.template.html');
 
 @Component({
-	selector: 'my-app',
+	selector: 'menu',
 	template: template
 })
-export class AppComponent {
+export class MenuComponent {
 
 	constructor() {
 	}
