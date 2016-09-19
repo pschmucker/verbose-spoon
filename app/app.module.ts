@@ -7,6 +7,7 @@ import { routing } from './app.route';
 
 import { AppComponent } from './app.component';
 import { FormValidationsComponent } from './form-validations.component';
+import { RouterNavigateComponent } from './router-navigate.component';
 import { TodoListComponent } from './todo-list.component';
 import { MenuComponent } from './menu.component';
 import { MainComponent } from './main.component';
@@ -18,6 +19,7 @@ import { ValidatedClass } from './validated-class.directive';
 	declarations: [
 		AppComponent,
 		FormValidationsComponent,
+		RouterNavigateComponent,
 		TodoListComponent,
 		MenuComponent,
 		MainComponent,
